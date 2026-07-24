@@ -1,3 +1,5 @@
+'use client';
+
 import { useEffect } from 'react';
 import { useThemeStore } from '@/lib/stores/theme.store';
 

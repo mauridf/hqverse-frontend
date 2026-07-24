@@ -48,7 +48,7 @@ export function StatsCards({ stats }: StatsCardsProps) {
         <div
           key={index}
           className={cn(
-            'bg-white p-6 rounded-xl shadow-[0_10px_20px_-5px_rgba(0,0,0,0.12)] relative overflow-hidden group',
+            'bg-surface-container-lowest p-6 rounded-xl shadow-card relative overflow-hidden group',
             item.accent && 'border-b-4 border-on-tertiary-fixed-variant'
           )}
         >

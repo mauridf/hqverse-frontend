@@ -2,7 +2,6 @@ import type { NextConfig } from 'next';
 
 const nextConfig: NextConfig = {
   experimental: {
-    typedRoutes: true,
     serverActions: {
       bodySizeLimit: '2mb',
     },
@@ -43,17 +42,7 @@ const nextConfig: NextConfig = {
   compress: true,
   generateEtags: true,
   
-  webpack: (config, { isServer }) => {
-    if (!isServer) {
-      config.resolve.fallback = {
-        ...config.resolve.fallback,
-        fs: false,
-        net: false,
-        tls: false,
-      };
-    }
-    return config;
-  },
+  turbopack: {},
 };
 
 export default nextConfig;

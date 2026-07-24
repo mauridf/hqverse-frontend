@@ -1,3 +1,5 @@
+'use client';
+
 import { useAuth } from '@/lib/hooks/useAuth';
 import { AuthGuard } from '@/components/shared/AuthGuard';
 import { Navbar } from '@/components/layout/Navbar';

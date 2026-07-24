@@ -1,3 +1,5 @@
+'use client';
+
 import { useState, useEffect } from 'react';
 import Link from 'next/link';
 import { useForm } from 'react-hook-form';
@@ -61,9 +63,9 @@ export function RegisterForm() {
   };
 
   return (
-    <div className="bg-surface-container-lowest rounded-xl shadow-[0_10px_20px_rgba(0,0,0,0.12)] border border-outline-variant overflow-hidden">
+    <div className="bg-surface-container-lowest rounded-xl shadow-card border border-outline-variant overflow-hidden">
       {/* Card Header */}
-      <div className="p-6 bg-white border-b border-outline-variant text-center space-y-2">
+      <div className="p-6 bg-surface-container-lowest border-b border-outline-variant text-center space-y-2">
         <h1 className="text-headline-md font-headline-md text-primary leading-tight">
           Crie sua conta gratuita
         </h1>

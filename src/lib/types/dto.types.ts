@@ -18,7 +18,7 @@ export interface RefreshTokenDto {
 export interface AuthResponseDto {
   accessToken: string;
   refreshToken: string;
-  expiresIn: number;
+  expiresAt: string;
   user: UserDto;
 }
 
@@ -27,12 +27,11 @@ export interface UserDto {
   username: string;
   displayName: string;
   email: string;
-  role: UserRole;
+  role: string;
   avatarUrl?: string | null;
   bannerUrl?: string | null;
   bio?: string | null;
   createdAt: string;
-  updatedAt: string;
 }
 
 export interface UpdateUserDto {

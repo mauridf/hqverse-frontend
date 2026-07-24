@@ -1,3 +1,5 @@
+'use client';
+
 import { useState } from 'react';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
@@ -98,7 +100,7 @@ export function Navbar() {
                 placeholder="Buscar..."
                 value={searchQuery}
                 onChange={(e) => setSearchQuery(e.target.value)}
-                className="bg-[#F1F5F9] border-none text-on-surface text-label-sm px-4 py-2 rounded-full w-48 focus:bg-white focus:ring-2 focus:ring-primary focus:w-64 transition-all outline-none"
+                className="bg-surface-container-low border-none text-on-surface text-label-sm px-4 py-2 rounded-full w-48 focus:bg-surface-container-lowest focus:ring-2 focus:ring-primary focus:w-64 transition-all outline-none"
               />
               <Search className="absolute right-3 top-1/2 -translate-y-1/2 h-4 w-4 text-on-surface-variant" />
             </div>
@@ -212,7 +214,7 @@ export function Navbar() {
                   placeholder="Buscar..."
                   value={searchQuery}
                   onChange={(e) => setSearchQuery(e.target.value)}
-                  className="w-full bg-[#F1F5F9] border-none text-on-surface text-body-md px-4 py-3 rounded-xl focus:ring-2 focus:ring-primary outline-none"
+                  className="w-full bg-surface-container-low border-none text-on-surface text-body-md px-4 py-3 rounded-xl focus:ring-2 focus:ring-primary outline-none"
                 />
                 <Search className="absolute right-3 top-1/2 -translate-y-1/2 h-5 w-5 text-on-surface-variant" />
               </div>

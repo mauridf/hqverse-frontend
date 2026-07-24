@@ -12,27 +12,24 @@ import type {
 
 class AuthService {
   async register(data: RegisterDto): Promise<AuthResponseDto> {
-    const response = await httpClient.post<{ data: AuthResponseDto }>(
+    return httpClient.post<AuthResponseDto>(
       API_ENDPOINTS.AUTH.REGISTER,
       data
     );
-    return response.data;
   }
 
   async login(data: LoginDto): Promise<AuthResponseDto> {
-    const response = await httpClient.post<{ data: AuthResponseDto }>(
+    return httpClient.post<AuthResponseDto>(
       API_ENDPOINTS.AUTH.LOGIN,
       data
     );
-    return response.data;
   }
 
   async refresh(data: RefreshTokenDto): Promise<AuthResponseDto> {
-    const response = await httpClient.post<{ data: AuthResponseDto }>(
+    return httpClient.post<AuthResponseDto>(
       API_ENDPOINTS.AUTH.REFRESH,
       data
     );
-    return response.data;
   }
 
   async logout(): Promise<void> {
@@ -40,18 +37,11 @@ class AuthService {
   }
 
   async getProfile(): Promise<UserDto> {
-    const response = await httpClient.get<{ data: UserDto }>(
-      API_ENDPOINTS.AUTH.PROFILE
-    );
-    return response.data;
+    return httpClient.get<UserDto>(API_ENDPOINTS.AUTH.PROFILE);
   }
 
   async updateProfile(data: UpdateUserDto): Promise<UserDto> {
-    const response = await httpClient.put<{ data: UserDto }>(
-      API_ENDPOINTS.AUTH.PROFILE,
-      data
-    );
-    return response.data;
+    return httpClient.put<UserDto>(API_ENDPOINTS.AUTH.PROFILE, data);
   }
 
   async changePassword(data: ChangePasswordDto): Promise<void> {

@@ -1,3 +1,5 @@
+'use client';
+
 import { useState } from 'react';
 import Image from 'next/image';
 import { Edit, Key, Calendar, Verified } from 'lucide-react';
@@ -31,7 +33,7 @@ export function ProfileHeader({ user, onEdit, onChangePassword }: ProfileHeaderP
       {/* Avatar */}
       <div className="md:col-span-3 flex justify-center md:justify-start">
         <div 
-          className="relative w-48 h-48 md:w-56 md:h-56 rounded-xl overflow-hidden shadow-[0_10px_20px_-5px_rgba(0,0,0,0.12)] group"
+          className="relative w-48 h-48 md:w-56 md:h-56 rounded-xl overflow-hidden shadow-card group"
           onMouseEnter={() => setIsHovering(true)}
           onMouseLeave={() => setIsHovering(false)}
         >

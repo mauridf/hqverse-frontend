@@ -1,3 +1,5 @@
+'use client';
+
 import Link from 'next/link';
 import Image from 'next/image';
 import { Star, ArrowRight } from 'lucide-react';
@@ -68,7 +70,7 @@ export function RecentReviews({ reviews, onViewAll }: RecentReviewsProps) {
         {reviews.map((review) => (
           <div
             key={review.id}
-            className="bg-white p-4 rounded-xl shadow-[0_10px_20px_-5px_rgba(0,0,0,0.12)] flex flex-col sm:flex-row gap-4 items-start group hover:bg-surface transition-colors"
+            className="bg-surface-container-lowest p-4 rounded-xl shadow-card flex flex-col sm:flex-row gap-4 items-start group hover:bg-surface transition-colors"
           >
             {/* Issue Cover */}
             <Link 

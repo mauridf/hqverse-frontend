@@ -1,3 +1,5 @@
+'use client';
+
 import { useState } from 'react';
 import Link from 'next/link';
 import { useForm } from 'react-hook-form';
@@ -35,7 +37,7 @@ export function LoginForm() {
   };
 
   return (
-    <div className="bg-surface-container-lowest rounded-xl shadow-[0_20px_40px_-15px_rgba(0,0,0,0.1)] border border-outline-variant/30 overflow-hidden">
+    <div className="bg-surface-container-lowest rounded-xl shadow-popover border border-outline-variant/30 overflow-hidden">
       {/* Heroic Accent Strip */}
       <div className="h-1.5 w-full bg-linear-to-r from-primary via-secondary to-primary" />
 
@@ -70,7 +72,7 @@ export function LoginForm() {
             <div className={`
               relative group rounded-lg border transition-all
               ${form.formState.errors.email ? 'border-error' : 'border-outline-variant'}
-              ${!form.formState.errors.email && 'focus-within:border-primary focus-within:shadow-[0_0_0_2px_rgba(9,20,38,0.1)]'}
+              ${!form.formState.errors.email && 'focus-within:border-primary focus-within:ring-2 focus-within:ring-primary/10'}
               bg-surface-container-low
             `}>
               <Mail className="absolute left-3 top-1/2 -translate-y-1/2 h-5 w-5 text-outline" />
@@ -115,7 +117,7 @@ export function LoginForm() {
             <div className={`
               relative group rounded-lg border transition-all
               ${form.formState.errors.password ? 'border-error' : 'border-outline-variant'}
-              ${!form.formState.errors.password && 'focus-within:border-primary focus-within:shadow-[0_0_0_2px_rgba(9,20,38,0.1)]'}
+              ${!form.formState.errors.password && 'focus-within:border-primary focus-within:ring-2 focus-within:ring-primary/10'}
               bg-surface-container-low
             `}>
               <Lock className="absolute left-3 top-1/2 -translate-y-1/2 h-5 w-5 text-outline" />
