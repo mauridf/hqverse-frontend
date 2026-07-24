@@ -329,6 +329,14 @@ export interface ScanDto {
   links?: ScanLinkDto[];
 }
 
+export interface ScanDetailDto extends ScanDto {
+  synopsis?: string | null;
+  isbn?: string | null;
+  upc?: string | null;
+  reviewCount: number;
+  averageRating: number;
+}
+
 export interface ScanLinkDto {
   id: number;
   scanId: number;
