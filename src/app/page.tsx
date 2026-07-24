@@ -6,13 +6,13 @@ export default function HomePage() {
   return (
     <div className="min-h-screen">
       {/* Hero Section */}
-      <section className="relative bg-gradient-to-br from-primary/10 via-background to-secondary/20 py-24">
+      <section className="relative bg-linear-to-br from-primary/10 via-background to-secondary/20 py-24">
         <div className="container mx-auto px-4">
           <div className="max-w-3xl mx-auto text-center">
             <div className="flex justify-center mb-6">
               <span className="text-6xl">🦸</span>
             </div>
-            <h1 className="text-4xl md:text-6xl font-bold mb-6 bg-gradient-to-r from-primary to-blue-600 bg-clip-text text-transparent">
+            <h1 className="text-4xl md:text-6xl font-bold mb-6 bg-linear-to-r from-primary to-blue-600 bg-clip-text text-transparent">
               Bem-vindo ao HQVerse
             </h1>
             <p className="text-xl text-muted-foreground mb-8">
