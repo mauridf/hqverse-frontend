@@ -1,0 +1,14 @@
+services:
+  - type: web
+    name: hqverse-frontend
+    runtime: node
+    plan: starter
+    buildCommand: pnpm install && pnpm run build
+    startCommand: pnpm run start
+    envVars:
+      - key: NODE_VERSION
+        value: 20.11.0
+      - key: NEXT_PUBLIC_API_URL
+        value: https://hqverse-api.onrender.com
+      - key: NEXT_PUBLIC_SITE_URL
+        value: https://hqverse-frontend.onrender.com
