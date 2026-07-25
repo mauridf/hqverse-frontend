@@ -103,7 +103,7 @@ export default function HomePage() {
               priority
             />
           </div>
-          <div className="absolute inset-0 bg-gradient-to-t from-primary via-primary/60 to-transparent" />
+          <div className="absolute inset-0 bg-linear-to-t from-primary via-primary/60 to-transparent" />
           
           <div className="relative h-full flex items-end pb-16 px-4 md:px-10 max-w-screen-2xl mx-auto">
             <div className="max-w-3xl">
@@ -180,14 +180,14 @@ export default function HomePage() {
           <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-5 gap-4">
             {mockScans.map((scan) => (
               <div key={scan.id} className="group cursor-pointer">
-                <div className="relative aspect-[2/3] rounded-xl overflow-hidden shadow-[0_10px_20px_-5px_rgba(0,0,0,0.12)] transition-all group-hover:-translate-y-2">
+                <div className="relative aspect-2/3 rounded-xl overflow-hidden shadow-[0_10px_20px_-5px_rgba(0,0,0,0.12)] transition-all group-hover:-translate-y-2">
                   <Image
                     src={scan.image}
                     alt={scan.title}
                     fill
                     className="object-cover group-hover:scale-105 transition-transform duration-500"
                   />
-                  <div className="absolute inset-0 bg-gradient-to-t from-primary/90 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity p-4 flex flex-col justify-end">
+                  <div className="absolute inset-0 bg-linear-to-t from-primary/90 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity p-4 flex flex-col justify-end">
                     {scan.isNew && (
                       <Badge className="bg-secondary text-on-secondary text-[10px] font-bold px-2 py-0.5 rounded-full w-fit mb-1">
                         NEW
@@ -195,7 +195,7 @@ export default function HomePage() {
                     )}
                     <p className="text-white font-bold line-clamp-2">{scan.title}</p>
                   </div>
-                  <div className="absolute bottom-0 left-0 w-full h-1/3 opacity-20 pointer-events-none bg-[radial-gradient(circle,currentColor_1px,transparent_1px)] bg-[length:4px_4px] text-secondary/10" />
+                  <div className="absolute bottom-0 left-0 w-full h-1/3 opacity-20 pointer-events-none bg-[radial-gradient(circle,currentColor_1px,transparent_1px)] bg-size-[4px_4px] text-secondary/10" />
                 </div>
                 <div className="mt-2">
                   <h3 className="font-bold text-on-surface group-hover:text-secondary transition-colors">

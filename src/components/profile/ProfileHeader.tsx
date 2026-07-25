@@ -38,7 +38,7 @@ export function ProfileHeader({ user, onEdit, onChangePassword }: ProfileHeaderP
           onMouseLeave={() => setIsHovering(false)}
         >
           {/* Avatar com borda heroica */}
-          <div className="absolute inset-[-4px] border-3 border-secondary rounded-xl clip-path-polygon z-[-1] pointer-events-none" />
+          <div className="absolute -inset-1 border-3 border-secondary rounded-xl clip-path-polygon z-[-1] pointer-events-none" />
           
           <Image
             src={user.avatarUrl || '/images/default-avatar.png'}

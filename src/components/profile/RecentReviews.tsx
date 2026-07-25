@@ -75,7 +75,7 @@ export function RecentReviews({ reviews, onViewAll }: RecentReviewsProps) {
             {/* Issue Cover */}
             <Link 
               href={`/comic-issues/${review.issue.id}`}
-              className="w-full sm:w-32 h-48 bg-surface-container rounded-lg overflow-hidden flex-shrink-0 relative"
+              className="w-full sm:w-32 h-48 bg-surface-container rounded-lg overflow-hidden shrink-0 relative"
             >
               {review.issue.coverUrl ? (
                 <Image

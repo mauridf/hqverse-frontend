@@ -109,7 +109,7 @@ export default function PublisherDetailPage() {
         <section className="grid grid-cols-1 lg:grid-cols-12 gap-6 items-center mb-8">
           <div className="lg:col-span-4 flex justify-center">
             <div className="w-64 h-64 md:w-80 md:h-80 bg-white rounded-xl shadow-xl p-6 flex items-center justify-center border border-outline-variant relative overflow-hidden group">
-              <div className="absolute inset-0 bg-[radial-gradient(circle,currentColor_1px,transparent_1px)] bg-[length:4px_4px] text-on-surface-variant/5 group-hover:opacity-10 transition-opacity" />
+              <div className="absolute inset-0 bg-[radial-gradient(circle,currentColor_1px,transparent_1px)] bg-size-[4px_4px] text-on-surface-variant/5 group-hover:opacity-10 transition-opacity" />
               <Image
                 src={publisher.logo}
                 alt={publisher.name}
@@ -234,7 +234,7 @@ export default function PublisherDetailPage() {
                       fill
                       className="object-cover group-hover:scale-105 transition-transform duration-500"
                     />
-                    <div className="absolute bottom-0 left-0 right-0 p-2 bg-gradient-to-t from-black/80 to-transparent">
+                    <div className="absolute bottom-0 left-0 right-0 p-2 bg-linear-to-t from-black/80 to-transparent">
                       <Badge className="bg-secondary text-white text-[10px] font-bold px-2 py-0.5 rounded uppercase tracking-wider">
                         {index === 0 ? 'Top Rated' : 'Popular'}
                       </Badge>

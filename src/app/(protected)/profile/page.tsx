@@ -88,7 +88,7 @@ function ProfileContent() {
     <div className="min-h-screen bg-background">
       <Navbar />
       
-      <main className="max-w-[1280px] mx-auto px-4 md:px-10 py-6 space-y-6">
+      <main className="max-w-7xl mx-auto px-4 md:px-10 py-6 space-y-6">
         {/* Profile Header */}
         <ProfileHeader
           user={user}

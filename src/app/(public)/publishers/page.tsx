@@ -1,3 +1,5 @@
+'use client';
+
 import { useState } from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
@@ -112,8 +114,8 @@ export default function PublishersPage() {
               href={`/publishers/${publisher.slug}`}
               className="group relative bg-surface-container-lowest rounded-xl shadow-[0_10px_20px_rgba(0,0,0,0.12)] overflow-hidden transition-all border border-outline-variant/20 hover:shadow-[0_20px_40px_rgba(186,0,53,0.15)] hover:-translate-y-1"
             >
-              <div className="aspect-[16/9] w-full overflow-hidden bg-primary relative">
-                <div className="absolute inset-0 bg-[radial-gradient(circle,currentColor_1px,transparent_1px)] bg-[length:4px_4px] opacity-10 text-white pointer-events-none" />
+              <div className="aspect-video w-full overflow-hidden bg-primary relative">
+                <div className="absolute inset-0 bg-[radial-gradient(circle,currentColor_1px,transparent_1px)] bg-size-[4px_4px] opacity-10 text-white pointer-events-none" />
                 <Image
                   src={publisher.logo}
                   alt={publisher.name}

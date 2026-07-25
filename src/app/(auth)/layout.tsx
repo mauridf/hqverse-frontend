@@ -33,7 +33,7 @@ export default function AuthLayout({
         </svg>
       </div>
       
-      <div className="w-full max-w-[480px] z-10">
+      <div className="w-full max-w-120 z-10">
         {children}
       </div>
     </div>
