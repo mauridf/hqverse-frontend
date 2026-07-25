@@ -16,11 +16,10 @@ class SearchService {
       };
     }
 
-    const response = await httpClient.get<{ data: SearchResultDto }>(
+    return httpClient.get<SearchResultDto>(
       API_ENDPOINTS.SEARCH.GLOBAL,
       { params: { query } }
     );
-    return response.data;
   }
 }
 

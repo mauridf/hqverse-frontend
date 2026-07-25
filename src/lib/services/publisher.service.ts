@@ -20,26 +20,23 @@ class PublisherService {
   }
 
   async getById(id: number): Promise<PublisherDto> {
-    const response = await httpClient.get<{ data: PublisherDto }>(
+    return httpClient.get<PublisherDto>(
       API_ENDPOINTS.PUBLISHERS.DETAIL(id)
     );
-    return response.data;
   }
 
   async create(data: CreatePublisherDto): Promise<PublisherDto> {
-    const response = await httpClient.post<{ data: PublisherDto }>(
+    return httpClient.post<PublisherDto>(
       API_ENDPOINTS.PUBLISHERS.BASE,
       data
     );
-    return response.data;
   }
 
   async update(id: number, data: UpdatePublisherDto): Promise<PublisherDto> {
-    const response = await httpClient.put<{ data: PublisherDto }>(
+    return httpClient.put<PublisherDto>(
       API_ENDPOINTS.PUBLISHERS.DETAIL(id),
       data
     );
-    return response.data;
   }
 
   async delete(id: number): Promise<void> {

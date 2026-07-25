@@ -1,18 +1,14 @@
+'use client';
+
 import Link from 'next/link';
 import Image from 'next/image';
-import { Rocket, Compass, Star, Library, Users, BookOpen, ArrowRight } from 'lucide-react';
+import { Rocket, Compass, Star, ArrowRight } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
 import { Navbar } from '@/components/layout/Navbar';
 import { Footer } from '@/components/layout/Footer';
-
-// Mock data - será substituído por dados da API
-const mockStats = {
-  publishers: 1200,
-  characters: 25000,
-  issues: 50000,
-};
+import { useDashboard } from '@/lib/hooks/useData';
 
 const mockScans = [
   {
@@ -88,6 +84,9 @@ const mockReviews = [
 ];
 
 export default function HomePage() {
+  const { data: dashboardData } = useDashboard();
+  const stats = dashboardData?.stats;
+
   return (
     <>
       <Navbar />
@@ -137,7 +136,7 @@ export default function HomePage() {
           <div className="max-w-screen-2xl mx-auto px-4 grid grid-cols-1 md:grid-cols-3 gap-6 text-center">
             <div className="group">
               <div className="text-headline-lg font-headline-lg text-secondary-fixed group-hover:scale-110 transition-transform">
-                {mockStats.publishers.toLocaleString()}
+                {(stats?.publishers ?? 1200).toLocaleString()}
               </div>
               <div className="text-label-heroic text-on-primary-container/80 uppercase tracking-widest">
                 Publishers
@@ -145,7 +144,7 @@ export default function HomePage() {
             </div>
             <div className="group">
               <div className="text-headline-lg font-headline-lg text-secondary-fixed group-hover:scale-110 transition-transform">
-                {mockStats.characters.toLocaleString()}
+                {(stats?.characters ?? 25000).toLocaleString()}
               </div>
               <div className="text-label-heroic text-on-primary-container/80 uppercase tracking-widest">
                 Characters
@@ -153,7 +152,7 @@ export default function HomePage() {
             </div>
             <div className="group">
               <div className="text-headline-lg font-headline-lg text-secondary-fixed group-hover:scale-110 transition-transform">
-                {mockStats.issues.toLocaleString()}
+                {(stats?.issues ?? 50000).toLocaleString()}
               </div>
               <div className="text-label-heroic text-on-primary-container/80 uppercase tracking-widest">
                 Issues

@@ -19,10 +19,9 @@ class IssueService {
   }
 
   async getById(id: number): Promise<ComicIssueDetailDto> {
-    const response = await httpClient.get<{ data: ComicIssueDetailDto }>(
+    return httpClient.get<ComicIssueDetailDto>(
       API_ENDPOINTS.COMIC_ISSUES.DETAIL(id)
     );
-    return response.data;
   }
 
   async getBySeries(

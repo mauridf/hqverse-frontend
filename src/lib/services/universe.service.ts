@@ -16,10 +16,9 @@ class UniverseService {
   }
 
   async getById(id: number): Promise<UniverseDto> {
-    const response = await httpClient.get<{ data: UniverseDto }>(
+    return httpClient.get<UniverseDto>(
       API_ENDPOINTS.UNIVERSES.DETAIL(id)
     );
-    return response.data;
   }
 }
 

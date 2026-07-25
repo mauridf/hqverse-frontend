@@ -13,25 +13,22 @@ import type {
 class ScanService {
   // Scan Groups
   async getGroups(): Promise<ScanGroupDto[]> {
-    const response = await httpClient.get<{ data: ScanGroupDto[] }>(
+    return httpClient.get<ScanGroupDto[]>(
       API_ENDPOINTS.SCANS.GROUPS
     );
-    return response.data;
   }
 
   async getGroupById(id: number): Promise<ScanGroupDto> {
-    const response = await httpClient.get<{ data: ScanGroupDto }>(
+    return httpClient.get<ScanGroupDto>(
       API_ENDPOINTS.SCANS.GROUP_DETAIL(id)
     );
-    return response.data;
   }
 
   async createGroup(data: CreateScanGroupDto): Promise<ScanGroupDto> {
-    const response = await httpClient.post<{ data: ScanGroupDto }>(
+    return httpClient.post<ScanGroupDto>(
       API_ENDPOINTS.SCANS.GROUPS,
       data
     );
-    return response.data;
   }
 
   // Scans
@@ -66,18 +63,16 @@ class ScanService {
   }
 
   async getById(id: number): Promise<ScanDetailDto> {
-    const response = await httpClient.get<{ data: ScanDetailDto }>(
+    return httpClient.get<ScanDetailDto>(
       API_ENDPOINTS.SCANS.DETAIL(id)
     );
-    return response.data;
   }
 
   async create(data: CreateScanDto): Promise<ScanDto> {
-    const response = await httpClient.post<{ data: ScanDto }>(
+    return httpClient.post<ScanDto>(
       API_ENDPOINTS.SCANS.BASE,
       data
     );
-    return response.data;
   }
 
   async delete(id: number): Promise<void> {

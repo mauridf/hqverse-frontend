@@ -33,26 +33,23 @@ class ReviewService {
   }
 
   async getById(id: number): Promise<ReviewDto> {
-    const response = await httpClient.get<{ data: ReviewDto }>(
+    return httpClient.get<ReviewDto>(
       API_ENDPOINTS.REVIEWS.DETAIL(id)
     );
-    return response.data;
   }
 
   async create(data: CreateReviewDto): Promise<ReviewDto> {
-    const response = await httpClient.post<{ data: ReviewDto }>(
+    return httpClient.post<ReviewDto>(
       API_ENDPOINTS.REVIEWS.BASE,
       data
     );
-    return response.data;
   }
 
   async update(id: number, data: Partial<CreateReviewDto>): Promise<ReviewDto> {
-    const response = await httpClient.put<{ data: ReviewDto }>(
+    return httpClient.put<ReviewDto>(
       API_ENDPOINTS.REVIEWS.DETAIL(id),
       data
     );
-    return response.data;
   }
 
   async delete(id: number): Promise<void> {
@@ -60,11 +57,10 @@ class ReviewService {
   }
 
   async addComment(reviewId: number, data: CreateCommentDto): Promise<CommentDto> {
-    const response = await httpClient.post<{ data: CommentDto }>(
+    return httpClient.post<CommentDto>(
       API_ENDPOINTS.REVIEWS.COMMENTS(reviewId),
       data
     );
-    return response.data;
   }
 
   async deleteComment(commentId: number): Promise<void> {
@@ -72,10 +68,9 @@ class ReviewService {
   }
 
   async toggleLike(reviewId: number): Promise<{ liked: boolean; likeCount: number }> {
-    const response = await httpClient.post<{ data: { liked: boolean; likeCount: number } }>(
+    return httpClient.post<{ liked: boolean; likeCount: number }>(
       API_ENDPOINTS.REVIEWS.LIKE(reviewId)
     );
-    return response.data;
   }
 }
 

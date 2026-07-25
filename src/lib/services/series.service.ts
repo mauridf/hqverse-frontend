@@ -26,10 +26,9 @@ class SeriesService {
   }
 
   async getById(id: number): Promise<ComicSeriesDto> {
-    const response = await httpClient.get<{ data: ComicSeriesDto }>(
+    return httpClient.get<ComicSeriesDto>(
       API_ENDPOINTS.COMIC_SERIES.DETAIL(id)
     );
-    return response.data;
   }
 }
 

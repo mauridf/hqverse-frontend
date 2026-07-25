@@ -26,10 +26,9 @@ class CharacterService {
   }
 
   async getById(id: number): Promise<CharacterDto> {
-    const response = await httpClient.get<{ data: CharacterDto }>(
+    return httpClient.get<CharacterDto>(
       API_ENDPOINTS.CHARACTERS.DETAIL(id)
     );
-    return response.data;
   }
 }
 

@@ -26,10 +26,9 @@ class CreatorService {
   }
 
   async getById(id: number): Promise<CreatorDto> {
-    const response = await httpClient.get<{ data: CreatorDto }>(
+    return httpClient.get<CreatorDto>(
       API_ENDPOINTS.CREATORS.DETAIL(id)
     );
-    return response.data;
   }
 }
 

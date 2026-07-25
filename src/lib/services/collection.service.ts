@@ -28,26 +28,23 @@ class CollectionService {
   }
 
   async getById(id: number): Promise<UserCollectionDetailDto> {
-    const response = await httpClient.get<{ data: UserCollectionDetailDto }>(
+    return httpClient.get<UserCollectionDetailDto>(
       API_ENDPOINTS.COLLECTIONS.DETAIL(id)
     );
-    return response.data;
   }
 
   async create(data: CreateCollectionDto): Promise<UserCollectionDto> {
-    const response = await httpClient.post<{ data: UserCollectionDto }>(
+    return httpClient.post<UserCollectionDto>(
       API_ENDPOINTS.COLLECTIONS.BASE,
       data
     );
-    return response.data;
   }
 
   async update(id: number, data: UpdateCollectionDto): Promise<UserCollectionDto> {
-    const response = await httpClient.put<{ data: UserCollectionDto }>(
+    return httpClient.put<UserCollectionDto>(
       API_ENDPOINTS.COLLECTIONS.DETAIL(id),
       data
     );
-    return response.data;
   }
 
   async delete(id: number): Promise<void> {
@@ -84,36 +81,32 @@ class CollectionService {
 
   // Reading Progress
   async startReading(data: StartReadingDto): Promise<ReadingProgressDto> {
-    const response = await httpClient.post<{ data: ReadingProgressDto }>(
+    return httpClient.post<ReadingProgressDto>(
       API_ENDPOINTS.COLLECTIONS.READING_START,
       data
     );
-    return response.data;
   }
 
   async updateReadingProgress(
     issueId: number,
     data: UpdateReadingProgressDto
   ): Promise<ReadingProgressDto> {
-    const response = await httpClient.put<{ data: ReadingProgressDto }>(
+    return httpClient.put<ReadingProgressDto>(
       API_ENDPOINTS.COLLECTIONS.READING_PROGRESS(issueId),
       data
     );
-    return response.data;
   }
 
   async getReadingProgress(issueId: number): Promise<ReadingProgressDto> {
-    const response = await httpClient.get<{ data: ReadingProgressDto }>(
+    return httpClient.get<ReadingProgressDto>(
       API_ENDPOINTS.COLLECTIONS.READING_PROGRESS(issueId)
     );
-    return response.data;
   }
 
   async getCurrentReadings(): Promise<ReadingProgressDto[]> {
-    const response = await httpClient.get<{ data: ReadingProgressDto[] }>(
+    return httpClient.get<ReadingProgressDto[]>(
       API_ENDPOINTS.COLLECTIONS.READING_CURRENT
     );
-    return response.data;
   }
 }
 

@@ -27,10 +27,9 @@ class StoryArcService {
   }
 
   async getById(id: number): Promise<StoryArcDetailDto> {
-    const response = await httpClient.get<{ data: StoryArcDetailDto }>(
+    return httpClient.get<StoryArcDetailDto>(
       API_ENDPOINTS.STORY_ARCS.DETAIL(id)
     );
-    return response.data;
   }
 }
 

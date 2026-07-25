@@ -26,10 +26,9 @@ class TeamService {
   }
 
   async getById(id: number): Promise<TeamDto> {
-    const response = await httpClient.get<{ data: TeamDto }>(
+    return httpClient.get<TeamDto>(
       API_ENDPOINTS.TEAMS.DETAIL(id)
     );
-    return response.data;
   }
 }
 

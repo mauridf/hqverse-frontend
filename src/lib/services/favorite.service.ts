@@ -4,18 +4,16 @@ import type { FavoriteDto, AddFavoriteDto, EntityType } from '@/lib/types';
 
 class FavoriteService {
   async getAll(): Promise<FavoriteDto[]> {
-    const response = await httpClient.get<{ data: FavoriteDto[] }>(
+    return httpClient.get<FavoriteDto[]>(
       API_ENDPOINTS.FAVORITES.BASE
     );
-    return response.data;
   }
 
   async add(data: AddFavoriteDto): Promise<FavoriteDto> {
-    const response = await httpClient.post<{ data: FavoriteDto }>(
+    return httpClient.post<FavoriteDto>(
       API_ENDPOINTS.FAVORITES.BASE,
       data
     );
-    return response.data;
   }
 
   async remove(entityType: EntityType, entityId: number): Promise<void> {
@@ -25,10 +23,9 @@ class FavoriteService {
   }
 
   async check(entityType: EntityType, entityId: number): Promise<boolean> {
-    const response = await httpClient.get<{ data: boolean }>(
+    return httpClient.get<boolean>(
       API_ENDPOINTS.FAVORITES.CHECK(entityType, entityId)
     );
-    return response.data;
   }
 }
 
